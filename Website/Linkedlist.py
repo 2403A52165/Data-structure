@@ -16,6 +16,11 @@ class LinkedList:
         while last_node.next:
             last_node = last_node.next
         last_node.next = new_node
+    def add_beginning(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
 
     def display(self):
         current_node = self.head
@@ -30,4 +35,6 @@ ll.add_end(150)
 ll.add_end(350)
 ll.add_end(400)
 ll.add_end(450)
+ll.add_beginning(50)    
+ll.add_beginning(25)
 ll.display()
