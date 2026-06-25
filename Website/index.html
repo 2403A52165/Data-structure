@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brungi Srikar | Cybersecurity Portfolio</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: rgba(255,255,255,0.08);
+      --panel-strong: rgba(255,255,255,0.12);
+      --text: #eef4ff;
+      --muted: #b8c4da;
+      --accent: #4dd7ff;
+      --accent-2: #7f7cff;
+      --border: rgba(255,255,255,0.16);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top left, #14253f, var(--bg) 60%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(7, 17, 31, 0.75);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      color: var(--muted);
+    }
+
+    .hero {
+      padding: 5rem 0 3rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      margin: 0 0 0.8rem;
+      line-height: 1.1;
+    }
+
+    .hero p { color: var(--muted); font-size: 1.05rem; }
+
+    .highlight {
+      color: var(--accent);
+      background: linear-gradient(90deg, var(--accent), #8de5ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.2rem;
+    }
+
+    .tag {
+      padding: 0.6rem 0.9rem;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 999px;
+      font-size: 0.95rem;
+      color: #dfeaff;
+    }
+
+    .hero-card {
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(77,215,255,0.15), rgba(127,124,255,0.15));
+      padding: 1.5rem;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    .stat {
+      background: var(--panel-strong);
+      padding: 0.9rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    section {
+      padding: 2.4rem 0;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .about, .skills, .projects {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 24px;
+    }
+
+    .skills-grid, .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .card h4 { margin: 0 0 0.4rem; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .cta {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.1rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #04101d;
+      font-weight: 700;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 780px) {
+      .hero, .skills-grid, .project-grid, .stat-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero { padding-top: 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Brungi Srikar</div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="section-title">3rd Year B.Tech CSE-CS Student</p>
+        <h1>Building a future in <span class="highlight">Cybersecurity</span> and Python Development.</h1>
+        <p>I am Brungi Srikar, a passionate learner focused on cybersecurity, ethical hacking concepts, secure coding, and effective communication. I enjoy turning complex technical ideas into practical solutions.</p>
+        <div class="tag-row">
+          <span class="tag">Cybersecurity</span>
+          <span class="tag">Python</span>
+          <span class="tag">Communication</span>
+          <span class="tag">English</span>
+        </div>
+        <a class="cta" href="#projects">Explore My Work</a>
+      </div>
+
+      <div class="hero-card">
+        <h3>Profile Snapshot</h3>
+        <p>Focused on strong technical fundamentals, real-world problem solving, and clear professional communication.</p>
+        <div class="stat-grid">
+          <div class="stat">
+            <strong>3rd Year</strong><br />B.Tech CSE-CS
+          </div>
+          <div class="stat">
+            <strong>Cyber Focus</strong><br />Security Projects
+          </div>
+          <div class="stat">
+            <strong>Python</strong><br />Automation & Coding
+          </div>
+          <div class="stat">
+            <strong>Soft Skills</strong><br />Communication & English
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h3 class="section-title">About Me</h3>
+      <p>I am a curious and dedicated student who enjoys exploring the world of cybersecurity and technology. My strengths include logical thinking, hands-on coding, and presenting ideas confidently in English. I am always eager to learn new tools, strengthen my skills, and contribute to meaningful projects.</p>
+    </section>
+
+    <section id="skills" class="skills">
+      <h3 class="section-title">Skills</h3>
+      <div class="skills-grid">
+        <div class="card">
+          <h4>Cybersecurity</h4>
+          <p>Understanding of security concepts, vulnerability awareness, and practical project-based learning.</p>
+        </div>
+        <div class="card">
+          <h4>Python Programming</h4>
+          <p>Strong coding ability with a focus on automation, logic building, and script development.</p>
+        </div>
+        <div class="card">
+          <h4>Communication</h4>
+          <p>Ability to explain ideas clearly, collaborate effectively, and connect technology with people.</p>
+        </div>
+        <div class="card">
+          <h4>English Proficiency</h4>
+          <p>Confident in written and verbal communication for academic and professional settings.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <h3 class="section-title">Featured Projects</h3>
+      <div class="project-grid">
+        <div class="card">
+          <h4>Network Scanner Tool</h4>
+          <p>A Python-based script to scan devices and identify open ports for basic network analysis.</p>
+        </div>
+        <div class="card">
+          <h4>Security Awareness Dashboard</h4>
+          <p>A simple project focused on showcasing common cyber threats and safe digital practices.</p>
+        </div>
+        <div class="card">
+          <h4>Data Protection Script</h4>
+          <p>A practical Python project for file handling and secure data organization techniques.</p>
+        </div>
+        <div class="card">
+          <h4>Cybersecurity Learning Hub</h4>
+          <p>An educational project that presents beginner-friendly cybersecurity concepts clearly and neatly.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Designed with passion for learning, security, and growth.</div>
+  </footer>
+</body>
+</html>
+
